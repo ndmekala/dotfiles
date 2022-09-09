@@ -25,7 +25,7 @@ call plug#end()
 lua << END
 require('lualine').setup{
   options = {
-    theme = 'solarized_dark'
+    theme = 'solarized_light'
   }
 }
 END
@@ -42,7 +42,7 @@ endif
 " let g:dracula_italic = 0
 " "colorscheme dracula
 
-set background=dark
+set background=light
 let g:neosolarized_visibility="low"
 colorscheme NeoSolarized
 
