@@ -14,7 +14,9 @@ call plug#end()
 lua << END
 require('lualine').setup{
   options = {
-    theme = 'solarized_light'
+    theme = 'solarized_light',
+    component_separators = '',
+    section_separators = '',
   }
 }
 END
