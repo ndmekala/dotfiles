@@ -1,13 +1,12 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/vim/plugged')
 
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'sainnhe/everforest'
 Plug 'preservim/vim-pencil'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty/'
-Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'overcache/NeoSolarized'
 Plug 'junegunn/goyo.vim'
+Plug 'tribela/vim-transparent'
 
 call plug#end()
 
