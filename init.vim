@@ -43,7 +43,7 @@ set softtabstop=0
 set tabstop=2
 set nowrap
 set list
-set listchars+=space:•,eol:$
+set listchars+=space:◦
 
 " VANILLA VIM AUTO BRACKETS
 inoremap " ""<left>
