@@ -7,6 +7,7 @@ Plug 'maxmellon/vim-jsx-pretty/'
 Plug 'overcache/NeoSolarized'
 Plug 'junegunn/goyo.vim'
 Plug 'tribela/vim-transparent'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
