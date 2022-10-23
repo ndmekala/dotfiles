@@ -19,7 +19,7 @@ https://github.com/vdmp/karabinersetup for an example repo and file structure in
 - `neofetch`
   - `brew install neofetch`
   - add to `.zshrc`
-- powerlevel
+- powerlevel - `.p10k.zsh` important to include
 - nerd fonts
 - `exa` (`brew install exa`)
 - `.zshrc` (for aliases)
