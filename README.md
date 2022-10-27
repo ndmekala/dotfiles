@@ -47,3 +47,8 @@ https://github.com/vdmp/karabinersetup for an example repo and file structure in
 - smooze
 - sound source
 - topnotch…
+
+# Strategy
+
+- Use Mina Markham’s [formation](https://github.com/minamarkham/formation) as a base.
+- Use Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) as a starting place for *what* to include—namely not every last dotfile. Mostly `.config` (which includes `init.vim`) and `.zshrc`… 
