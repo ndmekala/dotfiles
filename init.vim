@@ -11,8 +11,16 @@ Plug 'junegunn/goyo.vim'
 Plug 'tribela/vim-transparent'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 call plug#end()
+
+" PRETTIER SETUP
+" ==============
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " LUALINE SETUP
 " =============
@@ -22,7 +30,23 @@ require('lualine').setup{
     theme = 'solarized_light',
     component_separators = '',
     section_separators = '',
-  }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'filename'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'filename'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'location'}
+  },
 }
 END
 
@@ -38,10 +62,11 @@ colorscheme NeoSolarized
 
 " VIM CONFIG
 " ==========
+let mapleader = ","
 set relativenumber
-set number
 scriptencoding utf-8
 set nobackup
+nnoremap <leader>1 :set nu! rnu!<CR>
 
 " TAB SETTINGS (NOT 💯) ON WHAT THESE DO
 " ======================================
@@ -52,7 +77,7 @@ set softtabstop=0
 set tabstop=2
 set nowrap
 set list
-set listchars+=space:◦
+" set listchars+=space:◦
 
 " VANILLA VIM AUTO BRACKETS
 " =========================
@@ -66,6 +91,8 @@ inoremap { {}<left>
 " ===============
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-]> :NERDTreeFocus<CR>
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal nu!
 
 " COC.NVIM CONFIG (TAB AUTOCOMPLETE)
 " ==================================
