@@ -13,21 +13,55 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'nelsyeung/twig.vim'
 
 call plug#end()
+
+" VIM CONFIG
+" ==========
+let mapleader = ","
+nnoremap <SPACE> <Nop>
+let maplocalleader = '\'
+set relativenumber
+scriptencoding utf-8
+set nobackup
+nnoremap <leader>1 :set nu! rnu!<CR>
+set foldmethod=indent
+set foldlevel=99
+filetype plugin on
+syntax on
+
+" SOURCING VIM FILES
+" ==================
+runtime ./todo/txt.vim
+
+
+" TOGGLETERM SETUP
+" ================
+
+lua << END
+require('toggleterm').setup{
+  direction = 'float',
+}
+END
+
+nnoremap <leader>2 :ToggleTerm<CR>
 
 " PRETTIER SETUP
 " ==============
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
 
 " LUALINE SETUP
 " =============
 lua << END
 require('lualine').setup{
   options = {
-    theme = 'solarized_light',
+    theme = 'solarized_dark',
     component_separators = '',
     section_separators = '',
   },
@@ -56,17 +90,10 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=light
+set background=dark
 let g:neosolarized_visibility="low"
 colorscheme NeoSolarized
 
-" VIM CONFIG
-" ==========
-let mapleader = ","
-set relativenumber
-scriptencoding utf-8
-set nobackup
-nnoremap <leader>1 :set nu! rnu!<CR>
 
 " TAB SETTINGS (NOT 💯) ON WHAT THESE DO
 " ======================================
