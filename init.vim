@@ -15,6 +15,7 @@ Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'nelsyeung/twig.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -61,7 +62,7 @@ let g:prettier#config#trailing_comma = 'all'
 lua << END
 require('lualine').setup{
   options = {
-    theme = 'solarized_dark',
+    theme = 'papercolor_dark',
     component_separators = '',
     section_separators = '',
   },
@@ -91,9 +92,10 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:neosolarized_visibility="low"
-colorscheme NeoSolarized
+" let g:neosolarized_visibility="low"
+" colorscheme NeoSolarized
 
+colorscheme PaperColor
 
 " TAB SETTINGS (NOT 💯) ON WHAT THESE DO
 " ======================================
