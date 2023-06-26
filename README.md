@@ -6,49 +6,35 @@ This is a very-much-in-progress repo.
 
 This is essentially the equivalent of `.vimrc` for Neovim.
 
-You will need Neovim [installed](https://dev.to/craftzdog/how-to-install-neovim-on-apple-silicon-m1-mac-27ke) and [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim) installed.
+You will need Neovim and [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim) installed.
+
+<small>[This article](https://dev.to/craftzdog/how-to-install-neovim-on-apple-silicon-m1-mac-27ke) specifies that you need(ed) `treesitter` and `luajit` installed from `HEAD` before installing `neovim` from `HEAD` to get things to work on Apple Silicon. This script currently does not include installing `treesitter` and `luajit` but look here if `neovim` installation fails on an Apple silicon system.</small>
 
 ## a karabiner json file
 
 https://github.com/vdmp/karabinersetup for an example repo and file structure insights
 
-## Ideas of Things to Include…
-
-- z jump
-- `bat` (`brew install bat`)
-- `neofetch`
-  - `brew install neofetch`
-  - add to `.zshrc`
-- powerlevel - `.p10k.zsh` important to include
-- nerd fonts
-- `exa` (`brew install exa`)
-- `.zshrc` (for aliases)
-
-## Mac App Store
-- iA writer
-- coteditor
-- things 3
-- handmirror
-- horo
-- chill lite (?)
-- mactracker
-- magnet
-
-## Other Apps - Homebrew
-- cot editor cli (?)
-- Alfred
-- iterm
-- chrome
-- firefox
-- karabiner
-- numi
-
-## Other other apps
-- smooze
-- sound source
-- topnotch…
-
 # Strategy
 
 - Use Mina Markham’s [formation](https://github.com/minamarkham/formation) as a base.
-- Use Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) as a starting place for *what* to include—namely not every last dotfile. Mostly `.config` (which includes `init.vim`) and `.zshrc`… 
+- Use Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) as a starting place for _what_ to include—namely not every last dotfile. Mostly `.config` (which includes `init.vim`) and `.zshrc`…
+
+# 230625 Tasks
+
+I need my cwmbp dotfiles represented here…
+
+- [ ] there should be a .localzshrc.example
+- [ ] z-jump (in .zshrc… needs to be configured properly)
+- [ ] .zshrc
+- [ ] .p10k.zsh
+- [ ] .todo.cfg
+- [ ] put papercolor iterm somewhere sensible…
+- [ ] configure karabiner sensibly…
+- [ ] vim plug requires running a script that beams shit into .local… need to figure out how to run that 1x (just check if its there… lol)
+
+## Wizardry
+
+- [ ] brew cot editor cli
+- [ ] cask for tor
+- [ ] cask for firefox
+- [ ] cask for firefox dev edition
