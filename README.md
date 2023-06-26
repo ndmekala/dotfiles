@@ -8,7 +8,7 @@ This is essentially the equivalent of `.vimrc` for Neovim.
 
 You will need Neovim and [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim) installed.
 
-<small>[This article](https://dev.to/craftzdog/how-to-install-neovim-on-apple-silicon-m1-mac-27ke) specifies that you need(ed) `treesitter` and `luajit` installed from `HEAD` before installing `neovim` from `HEAD` to get things to work on Apple Silicon. This script currently does not include installing `treesitter` and `luajit` but look here if `neovim` installation fails on an Apple silicon system.</small>
+<sub>[This article](https://dev.to/craftzdog/how-to-install-neovim-on-apple-silicon-m1-mac-27ke) specifies that you need(ed) `treesitter` and `luajit` installed from `HEAD` before installing `neovim` from `HEAD` to get things to work on Apple Silicon. This script currently does not include installing `treesitter` and `luajit` but look here if `neovim` installation fails on an Apple silicon system.</sub>
 
 ## a karabiner json file
 
