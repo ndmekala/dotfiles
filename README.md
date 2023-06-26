@@ -14,6 +14,8 @@ You will need Neovim and [`vim-plug` for Neovim](https://github.com/junegunn/vim
 
 https://github.com/vdmp/karabinersetup for an example repo and file structure insights
 
+https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
+
 # Strategy
 
 - Use Mina Markham’s [formation](https://github.com/minamarkham/formation) as a base.
