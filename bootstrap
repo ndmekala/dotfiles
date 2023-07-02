@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# TODOS
+# -----
+# - [ ] handle standard dotfile (.zshrc, .p10k.zsh)
+# - [ ] handle init.vim --> .config
+# - [ ] handle karabiner (dir) --> .config/karabiner
+# - [ ] handle .z-jump… (curling it in feels more badass…) -- check if .z-jump exists, create if not & curl in script
+# - [ ] handle vim plug
+
+# Get full directory name of this script
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+symlink() {
+  SRC="$1"
+  DEST="$2"
+  if [ -L "$DEST" ]; then
+    # do nothing
+  elif [ -e "$DEST" ]; then
+    # mv to e.g.  .backups/.zshrc_backup
+    # will require some name parsing shenanigans
+    # will this handle directory? special case required?
+    ln -s "$SRC" "$DEST"
+  else
+    ln -s "$SRC" "$DEST"
+  fi
+}
+
+for ITEM in $(find -H "$SCRIPT_DIR" -name '.*'); do
+  if [ -f "$ITEM" ]; then
+    echo "processing $ITEM"
+    # must get destination… requires parsing shenanigans
+    # symlink "$ITEM" (destination goes here… ~/.whatever)
+  fi
+done
+
+mkdir -p "$HOME/.subdirectory/subsubdirectory"
+
+# symlink init.vim
+symlink "$SCRIPT_DIR/test.txt" "$HOME/.subdirectory/subsubdirectory/test.txt"
+
+# symlink karabiner config
+# symlink "$SCRIPT_DIR/karabiner" "$HOME/.config/karabiner" ??????
+symlink "$SCRIPT_DIR/karabiner" "$HOME/.config/"
+
+
+# install vim-plug
+if [ -!e /path/to/whatever/vim/plug/installs ]; then
+  # install vim plug … via curl script
+fi
