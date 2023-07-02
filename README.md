@@ -25,11 +25,40 @@ https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
 
 I need my cwmbp dotfiles represented here…
 
-- [ ] there should be a .localzshrc.example
-- [ ] z-jump (in .zshrc… needs to be configured properly)
-- [ ] .zshrc
-- [ ] .p10k.zsh
-- [ ] .todo.cfg
-- [ ] put papercolor iterm somewhere sensible…
-- [ ] configure karabiner sensibly…
-- [ ] vim plug requires running a script that beams shit into .local… need to figure out how to run that 1x (just check if its there… lol)
+## Standard Dotfiles
+
+- [ ] ensure .z-jump exists in `dotfiles`
+- [ ] ensure .zshrc exists in `dotfiles`
+- [ ] ensure .p10k.zsh exists in `dotfiles`
+- [x] ensure standard dotfile bash function can handle directories gracefully
+- [x] make sure script handles backups gracfully
+
+## Dotfiles - Special Cases
+
+## Local Dotfiles - Copy and Configure Manually
+
+- [ ] make sure bash script handles EXAMPLE.localshrc
+- [ ] make sure bash script handles EXAMPLE.todo.cfg
+- [ ] ensure EXAMPLE.localshrc exists in `dotfiles`
+- [ ] ensure EXAMPLE.todo.cfg exists in `dotfiles`
+
+## Ensure `vim-plug` Gets Installed
+
+## Archive Particular Files Used to Generate What’s in Here
+
+- [ ] karabiner links
+- [ ] papercolor.iterm
+
+## Docment External Dependencies
+
+- [ ] vimplug
+- [ ] z-jump…
+- [ ] papercolor.iterm
+- [ ] karabiner linkz
+
+## Configure Wizardry
+
+- [ ] write `.macos` script
+- [ ] ensure `.macos` script can run conditionally in Wizardry
+- [ ] ensure dotfiles script will run conditionally in Wizardry…
+- [ ] Write wizardry readme

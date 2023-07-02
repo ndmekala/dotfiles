@@ -34,7 +34,7 @@ for ITEM in $(find -H "$SCRIPT_DIR" -name '.*'); do
   fi
 done
 
-mkdir -p "$HOME/.subdirectory/subsubdirectory"
+# mkdir -p "$HOME/.subdirectory/subsubdirectory"
 
 # symlink init.vim
 symlink "$SCRIPT_DIR/test.txt" "$HOME/.subdirectory/subsubdirectory/test.txt"
@@ -49,3 +49,8 @@ symlink "$SCRIPT_DIR/karabiner" "$HOME/.config/"
 if [ -!e /path/to/whatever/vim/plug/installs ]; then
   # install vim plug … via curl script
 fi
+
+
+
+
+
