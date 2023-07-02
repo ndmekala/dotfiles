@@ -44,6 +44,7 @@ symlink "$SCRIPT_DIR/test.txt" "$HOME/.subdirectory/subsubdirectory/test.txt"
 symlink "$SCRIPT_DIR/karabiner" "$HOME/.config/"
 
 
+# THIS IS KIND OF A SEPARATE TASK… RELATED TO DOTFILES BUT… NOT SYMLINKING!
 # install vim-plug
 if [ -!e /path/to/whatever/vim/plug/installs ]; then
   # install vim plug … via curl script
