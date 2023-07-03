@@ -1,5 +1,13 @@
 # Nirmal Mekala’s Dotfiles
 
+> NOTE: In addition to configuring things in the dotfile world, this script will also install [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim).
+
+## Acknowledgements
+
+Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) and setup are the number one inspiration for this project.
+
+---
+
 This is a very-much-in-progress repo.
 
 ## `init.vim`
@@ -16,10 +24,11 @@ https://github.com/vdmp/karabinersetup for an example repo and file structure in
 
 https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
 
+---
+
 # Strategy
 
 - Use Mina Markham’s [formation](https://github.com/minamarkham/formation) as a base.
-- Use Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) as a starting place for _what_ to include—namely not every last dotfile. Mostly `.config` (which includes `init.vim`) and `.zshrc`…
 
 # 230625 Tasks
 
@@ -35,26 +44,34 @@ I need my cwmbp dotfiles represented here…
 
 ## Dotfiles - Special Cases
 
+- [x] create code to handle special cases - where you are symlinking items to specific areas within dotfiles
+- [ ] ensure karabiner is in there
+- [ ] ensure iterms stuff is in there
+- [ ] ensure nvim stuff is in there
+
 ## Local Dotfiles - Copy and Configure Manually
 
-- [ ] make sure bash script handles EXAMPLE.localshrc
-- [ ] make sure bash script handles EXAMPLE.todo.cfg
+- [x] make sure bash script handles EXAMPLE.localshrc
+- [x] make sure bash script handles EXAMPLE.todo.cfg
 - [ ] ensure EXAMPLE.localshrc exists in `dotfiles`
 - [ ] ensure EXAMPLE.todo.cfg exists in `dotfiles`
 
 ## Ensure `vim-plug` Gets Installed
 
+- [x] add a place to install `vim-plug`
+
 ## Archive Particular Files Used to Generate What’s in Here
 
-- [ ] karabiner links
-- [ ] papercolor.iterm
+- [x] karabiner links
+- [x] papercolor.iterm
 
 ## Docment External Dependencies
 
-- [ ] vimplug
-- [ ] z-jump…
-- [ ] papercolor.iterm
-- [ ] karabiner linkz
+- [x] vimplug
+- [x] z-jump…
+- [x] papercolor.iterm
+- [x] karabiner linkz
+- [x] todo-txt vim setup
 
 ## Configure Wizardry
 

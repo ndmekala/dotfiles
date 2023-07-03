@@ -2,11 +2,6 @@
 
 # TODOS
 # -----
-# - [ ] handle standard dotfile (.zshrc, .p10k.zsh)
-# - [ ] handle init.vim --> .config
-# - [ ] handle karabiner (dir) --> .config/karabiner
-# - [ ] handle .z-jump… (curling it in feels more badass…) -- check if .z-jump exists, create if not & curl in script
-# - [ ] handle vim plug
 
 # Get full directory name of this script
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
