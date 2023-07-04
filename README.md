@@ -75,7 +75,8 @@ I need my cwmbp dotfiles represented here…
 
 ## Configure Wizardry
 
-- [ ] write `.macos` script
-- [ ] ensure `.macos` script can run conditionally in Wizardry
-- [ ] ensure dotfiles script will run conditionally in Wizardry…
-- [ ] Write wizardry readme
+- [x] edit script (language/prompts, scrub out unused stuff)
+- [ ] write `macos` script
+- [x] ensure `macos` script can run conditionally in Wizardry
+- [x] ensure dotfiles script will run conditionally in Wizardry…
+- [x] Write wizardry readme

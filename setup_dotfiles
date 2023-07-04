@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Get full directory name of this script
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DESTINATION_DIR="$HOME"
+
+symlink() {
+  SRC="$1"
+  DEST="$2"
+  if [ -L "$DEST" ]; then
+    printf "Link between \e[1;32m"$SRC"\e[0m and\n\e[1;32m"$DEST"\e[0m exists\n\n"
+    :
+  elif [ -e "$DEST" ]; then
+    printf "Creating backup and linking \e[1;32m"$SRC"\e[0m to\n\e[1;32m"$DEST"\e[0m\n\n"
+    mv "$DEST" ""$DEST".bak"
+    ln -s "$SRC" "$DEST"
+  else
+    printf "Linking \e[1;32m"$SRC"\e[0m to\n\e[1;32m"$DEST"\e[0m\n\n"
+    ln -s "$SRC" "$DEST"
+  fi
+}
+
+# GENERAL CASE
+# ============
+# --> symlinking all dotfiles in this dir to ~
+
+for ITEM in $(find -H "$SCRIPT_DIR" -name '.*'); do
+  if [ -f "$ITEM" -o -d "$ITEM" ]; then
+    symlink "$ITEM" ""$DESTINATION_DIR"/$(basename "$ITEM")"
+  fi
+done
+
+# SPECIFIC CASES
+# ==============
+# --> symlinking items to specific areas within dotfiles
+
+# SYMLINK_DATA is an array of strings, intended to be source-destination pairs e.g.…
+# SYMLINK_DATA = (
+#   src1 dest1
+#   src2 dest2
+#   etc…
+# )
+
+SYMLINK_DATA=("$SCRIPT_DIR/nuanced-dir" ""$DESTINATION_DIR"/another-one/nuanced-dir")
+# SYMLINK_DATA=(
+# "$SCRIPT_DIR/karabiner" "$HOME/.config/karabiner"
+# "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
+# "$SCRIPT_DIR/iterm-preferences" "$HOME/.config/iTerm2/preferences"
+# )
+TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
+
+for i in $(seq 0 "$TOTAL_SPECIAL_CASES"); do
+  SRC=${SYMLINK_DATA[i*2]}
+  DEST=${SYMLINK_DATA[i*2 + 1]}
+  mkdir -p $(dirname "$DEST")
+  symlink "$SRC" "$DEST"
+done
+
+# OTHER: LOCAL DOTFILES
+# =====================================================================
+# --> copy items that need to be configured locally
+
+for ITEM in $(find -H "$SCRIPT_DIR" -name 'EXAMPLE.*'); do
+#  DEST="$HOME/$(basename "$ITEM" | sed "s/^EXAMPLE//")"
+  DEST=""$DESTINATION_DIR"/$(basename "$ITEM" | sed "s/^EXAMPLE//")"
+  if [ -e "$DEST" ];then
+    printf "\e[1;32m"$DEST"\e[0m already exists, skipping\n\n"
+  else
+    printf "Copying example file \e[1;32m"$ITEM"\e[0m to\n \e[1;32m"$DEST"\e[0m\n\n"
+    cp -r "$ITEM" "$DEST"
+  fi
+done
+
+# INSTALL VIM-PLUG
+# ================
+
+if [ ! -e "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
+  # install vim plug … via curl script
+
+  printf "Installing vim-plug\n\n"
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+else
+  printf "vim-plug installed, skipping\n\n"
+fi
