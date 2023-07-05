@@ -26,15 +26,16 @@ https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
 
 ---
 
-# Strategy
-
-- Use Mina Markham’s [formation](https://github.com/minamarkham/formation) as a base.
-
 # 230625 Tasks
 
 I need my cwmbp dotfiles represented here…
 
 ## Update the Script to Use Live Stuff!
+
+## Documentation
+
+- [ ] Clean up this README
+- [ ] Flesh out Wizardry README.
 
 ## Standard Dotfiles
 
@@ -47,9 +48,9 @@ I need my cwmbp dotfiles represented here…
 ## Dotfiles - Special Cases
 
 - [x] create code to handle special cases - where you are symlinking items to specific areas within dotfiles
-- [ ] ensure karabiner is in there
+- [x] ensure karabiner is in there
 - [x] ensure iterms stuff is in there
-- [ ] ensure nvim stuff is in there
+- [x] ensure nvim stuff is in there
 
 ## Local Dotfiles - Copy and Configure Manually
 
