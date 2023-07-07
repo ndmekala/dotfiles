@@ -41,12 +41,11 @@ done
 #   etc…
 # )
 
-SYMLINK_DATA=("$SCRIPT_DIR/nuanced-dir" ""$DESTINATION_DIR"/another-one/nuanced-dir")
-# SYMLINK_DATA=(
-# "$SCRIPT_DIR/karabiner" "$HOME/.config/karabiner"
-# "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
-# "$SCRIPT_DIR/iterm-preferences" "$HOME/.config/iTerm2/preferences"
-# )
+SYMLINK_DATA=(
+"$SCRIPT_DIR/karabiner" "$HOME/.config/karabiner"
+"$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
+"$SCRIPT_DIR/iterm-preferences" "$HOME/.config/iTerm2/preferences"
+)
 TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
 
 for i in $(seq 0 "$TOTAL_SPECIAL_CASES"); do
@@ -61,7 +60,6 @@ done
 # --> copy items that need to be configured locally
 
 for ITEM in $(find -H "$SCRIPT_DIR" -name 'EXAMPLE.*'); do
-#  DEST="$HOME/$(basename "$ITEM" | sed "s/^EXAMPLE//")"
   DEST=""$DESTINATION_DIR"/$(basename "$ITEM" | sed "s/^EXAMPLE//")"
   if [ -e "$DEST" ];then
     printf "\e[1;32m"$DEST"\e[0m already exists, skipping\n\n"
@@ -78,8 +76,7 @@ if [ ! -e "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
   # install vim plug … via curl script
 
   printf "Installing vim-plug\n\n"
-  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
   printf "vim-plug installed, skipping\n\n"
 fi
