@@ -24,7 +24,7 @@ symlink() {
 # ============
 # --> symlinking all dotfiles in dotfiles directory to ~
 
-for ITEM in $(find -H "$DOTFILES_ROOT" -maxdepth 1 -name '.*' -not -path '*.git'); do
+for ITEM in $(find -H "$DOTFILES_ROOT" -depth 1 -name '.*' -not \( -path '*.git' -o -path '*.gitignore' -o -path '*.DS_Store' \)); do
   if [ -f "$ITEM" -o -d "$ITEM" ]; then
     symlink "$ITEM" ""$DESTINATION_DIR"/$(basename "$ITEM")"
   fi
@@ -44,7 +44,6 @@ done
 SYMLINK_DATA=(
 "$DOTFILES_ROOT/karabiner" "$DESTINATION_DIR/.config/karabiner"
 "$DOTFILES_ROOT/nvim" "$DESTINATION_DIR/.config/nvim"
-"$DOTFILES_ROOT/iterm-preferences" "$DESTINATION_DIR/.config/iTerm2/preferences"
 )
 TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
 
