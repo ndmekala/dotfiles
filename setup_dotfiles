@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get full directory name of this script
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES_ROOT="$HOME/.dotfiles"
 DESTINATION_DIR="$HOME"
 
 symlink() {
@@ -22,9 +22,9 @@ symlink() {
 
 # GENERAL CASE
 # ============
-# --> symlinking all dotfiles in this dir to ~
+# --> symlinking all dotfiles in dotfiles directory to ~
 
-for ITEM in $(find -H "$SCRIPT_DIR" -name '.*'); do
+for ITEM in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -type f -name '.*' -not -path '*.git'); do
   if [ -f "$ITEM" -o -d "$ITEM" ]; then
     symlink "$ITEM" ""$DESTINATION_DIR"/$(basename "$ITEM")"
   fi
@@ -42,9 +42,9 @@ done
 # )
 
 SYMLINK_DATA=(
-"$SCRIPT_DIR/karabiner" "$DESTINATION_DIR/.config/karabiner"
-"$SCRIPT_DIR/nvim" "$DESTINATION_DIR/.config/nvim"
-"$SCRIPT_DIR/iterm-preferences" "$DESTINATION_DIR/.config/iTerm2/preferences"
+"$DOTFILES_ROOT/karabiner" "$DESTINATION_DIR/.config/karabiner"
+"$DOTFILES_ROOT/nvim" "$DESTINATION_DIR/.config/nvim"
+"$DOTFILES_ROOT/iterm-preferences" "$DESTINATION_DIR/.config/iTerm2/preferences"
 )
 TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
 
@@ -59,7 +59,7 @@ done
 # =====================================================================
 # --> copy items that need to be configured locally
 
-for ITEM in $(find -H "$SCRIPT_DIR" -name 'EXAMPLE.*'); do
+for ITEM in $(find -H "$DOTFILES_ROOT" -name 'EXAMPLE.*'); do
   DEST=""$DESTINATION_DIR"/$(basename "$ITEM" | sed "s/^EXAMPLE//")"
   if [ -e "$DEST" ];then
     printf "\e[1;32m"$DEST"\e[0m already exists, skipping\n\n"
