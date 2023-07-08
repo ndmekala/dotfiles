@@ -42,9 +42,9 @@ done
 # )
 
 SYMLINK_DATA=(
-"$SCRIPT_DIR/karabiner" "$HOME/.config/karabiner"
-"$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
-"$SCRIPT_DIR/iterm-preferences" "$HOME/.config/iTerm2/preferences"
+"$SCRIPT_DIR/karabiner" "$DESTINATION_DIR/.config/karabiner"
+"$SCRIPT_DIR/nvim" "$DESTINATION_DIR/.config/nvim"
+"$SCRIPT_DIR/iterm-preferences" "$DESTINATION_DIR/.config/iTerm2/preferences"
 )
 TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
 
