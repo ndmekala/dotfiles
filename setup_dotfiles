@@ -24,7 +24,7 @@ symlink() {
 # ============
 # --> symlinking all dotfiles in dotfiles directory to ~
 
-for ITEM in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -type f -name '.*' -not -path '*.git'); do
+for ITEM in $(find -H "$DOTFILES_ROOT" -maxdepth 1 -type f -name '.*' -not -path '*.git'); do
   if [ -f "$ITEM" -o -d "$ITEM" ]; then
     symlink "$ITEM" ""$DESTINATION_DIR"/$(basename "$ITEM")"
   fi
