@@ -5,9 +5,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+case $(uname -m) in
+  'arm64')
+    homebrew_path='/opt/homebrew'
+    ;;
+  'x86_64')
+    homebrew_path='/usr/local'
+    ;;
+  *)
+    echo 'An error occurred parsing system architecture'
+    ;;
+esac
 
-alias t="/opt/homebrew/opt/todo-txt/bin/todo.sh -t -a"
+source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
+
+alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
 
 export BAT_THEME="ansi"
 
