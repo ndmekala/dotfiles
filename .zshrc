@@ -28,7 +28,7 @@ export BAT_THEME="ansi"
 . ~/.z-jump/z.sh
 
 # Auto-Push Commit Message
-push_notes () {
+auto_add_commit_push () {
   date_and_time=$(date '+%Y-%m-%d %H:%M:%S')
   git add -A && git commit -m "pushed via script $date_and_time" && git push
 }
@@ -43,7 +43,7 @@ alias gp="git push"
 alias gs="git status"
 alias gbv="git branch -v"
 # alias gcn="ga && git commit -m '$(commit_message)' && gp"
-alias gcn="push_notes"
+alias acp="auto_add_commit_push"
 alias gcb="git checkout -b"
 
 # LOCAL
