@@ -33,6 +33,11 @@ auto_add_commit_push () {
   git add -A && git commit -m "pushed via script $date_and_time" && git push
 }
 
+# Select GHQ Location with Peco
+zhq () {
+  cd $(ghq list --full-path | peco)
+}
+
 # Exa Aliases
 alias xa="exa --long --icons --git"
 alias xt="exa --long --icons --git --tree --git-ignore"
