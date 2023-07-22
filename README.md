@@ -34,7 +34,7 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 
 ## See Also
 
-- These dotfiles and script are used as part of [`wizardry`](https://github.com/ndmekala/wizardry) a script I use to configure and manage my macOS systems.
+- These dotfiles and script are used as part of [`wizardry`](https://github.com/ndmekala/wizardry), a script I use to configure and manage my macOS systems.
 - `docs/sources.md` for more info on what all is included here.
 
 ## Acknowledgements
