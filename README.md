@@ -1,5 +1,7 @@
 # Nirmal Mekala’s Dotfiles
 
+> A set of dotfiles for use with `zsh` on `macOS`.
+
 ## Usage
 
 This directory assumes it exists at `~/.dotfiles`. Clone the repo to that location.
@@ -26,6 +28,7 @@ It will backup existing files and skip if a symlink already exists.
 It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim) on systems that do not have it.
 
 ## What’s Included
+
 - Neovim setup
 - powerlevel10k zsh setup
 - karabiner elements (macOS keybindings) setup
