@@ -40,4 +40,4 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 ## Acknowledgements
 
 - Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) and setup are the number one inspiration for this project.
-- Zach Holman’s [dotfiles](https://github.com/holman/dotfiles), which feature a setup that creates symlinks.
+- Zach Holman’s [dotfiles](https://github.com/holman/dotfiles)
