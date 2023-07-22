@@ -8,7 +8,7 @@ That said, this document exists to outilnes some of the sources that were
 used to create much of the configuration that these dotfiles include.
 
 - [Z Jump](https://github.com/rupa/z)
-- [Papercolor theme for iTerm](https://github.com/dinhtungdu/papercolor-iterm2) was used to generate the iTerm preferences file in use.
+- [Material design theme for iTerm](https://github.com/MartinSeeler/iterm2-material-design) is what I use for an iTerm color scheme. (Currently, I configure this manually with `open material-design-colors.itermcolors`.)
 - [TODO.txt vim plugin](https://github.com/freitass/todo.txt-vim) is used in the `neovim` configuration files
 - Karabiner config comes mostly from community created rules or slight edits of them
   - [Right option --> hyper](https://ke-complex-modifications.pqrs.org/#right_option_to_hyper) was modified to use right shift
