@@ -21,7 +21,7 @@ This script performs three main functions:
 - creating symlinks between subdirectories in this directory and specific places within dotfiles (e.g. `nvim` goes to `~/.config/nvim`)
 - copying sample files that need machine-specific configuration
 
-It will backup existing files, and skip if a symlink already exists.
+It will backup existing files and skip if a symlink already exists.
 
 It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#neovim) on systems that do not have it.
 
@@ -35,6 +35,7 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 ## See Also
 
 - These dotfiles and script are used as part of `[wizardry](https://github.com/ndmekala/wizardry)` a script I use to configure and manage my macOS systems.
+- `docs/sources.md` for more info on what all is included here.
 
 ## Acknowledgements
 
