@@ -51,6 +51,9 @@ alias gbv="git branch -v"
 alias acp="auto_add_commit_push"
 alias gcb="git checkout -b"
 
+# Auto Completion
+autoload -Uz compinit && compinit
+
 # LOCAL
 source ~/.localshrc
 
