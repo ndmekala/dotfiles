@@ -34,7 +34,7 @@ auto_add_commit_push () {
 }
 
 # Select GHQ Location with Peco
-zhq () {
+phq () {
   cd $(ghq list --full-path | peco)
 }
 
