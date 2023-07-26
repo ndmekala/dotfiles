@@ -16,6 +16,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'nelsyeung/twig.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 call plug#end()
 
@@ -37,6 +39,21 @@ syntax on
 " ==================
 runtime ./todo/txt.vim
 
+
+" TELESCOPE SETUP
+" ===============
+
+nnoremap <leader>3 <cmd>Telescope live_grep<cr>
+nnoremap <leader>4 <cmd>Telescope find_files<cr>
+
+lua << END
+require('telescope').setup{
+  defaults = {
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.95 },
+  },
+}
+END
 
 " TOGGLETERM SETUP
 " ================
