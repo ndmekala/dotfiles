@@ -34,6 +34,7 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 - karabiner elements (macOS keybindings) setup
 - sample config file for `todo-txt` CLI
 - `z` for fast directory jumping
+- a minimalist `tmux` configuration
 
 ## See Also
 
