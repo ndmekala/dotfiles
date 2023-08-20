@@ -1,6 +1,6 @@
 # Nirmal Mekala’s Dotfiles
 
-> A set of dotfiles for use with `zsh` on `macOS`.
+> A set of dotfiles for use with `zsh` on macOS.
 
 ## Usage
 
