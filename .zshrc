@@ -29,8 +29,15 @@ export BAT_THEME="ansi"
 
 # Auto-Push Commit Message
 auto_add_commit_push () {
-  date_and_time=$(date '+%Y-%m-%d %H:%M:%S')
-  git add -A && git commit -m "pushed via script $date_and_time" && git push
+  current_dir="$PWD"
+
+  if [[ "$current_dir" == *"organize"* || "$current_dir" == *"cw-notes"* ]]; then
+    date_and_time=$(date '+%Y-%m-%d %H:%M:%S')
+    git add -A && git commit -m "pushed via script $date_and_time" && git push
+  else
+    echo "What’s the matter with you?!"
+  fi
+
 }
 
 # Select GHQ Location with Peco
