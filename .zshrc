@@ -17,11 +17,17 @@ case $(uname -m) in
     ;;
 esac
 
+
+
 source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
 
 alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
 
 export BAT_THEME="ansi"
+
+
+# Remove Ctrl+X from zsh keybindings so that vim can use it
+bindkey -r "^X"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
