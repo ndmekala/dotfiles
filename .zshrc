@@ -51,6 +51,11 @@ phq () {
   cd $(ghq list --full-path | peco)
 }
 
+# App Launch
+a () {
+  open $(find /Applications -maxdepth 1 -not -path '*/\.*' | peco)
+}
+
 # Exa Aliases
 alias xa="exa --long --icons --git"
 alias xt="exa --long --icons --git --tree --git-ignore"
