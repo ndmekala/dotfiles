@@ -75,6 +75,12 @@ autoload -Uz compinit && compinit
 # LOCAL
 source ~/.localshrc
 
+# fff
+f() {
+  fff "$@"
+  cd "$(cat "$HOME/.cache/fff/.fff_d")"
+}
+
 # gcalcli
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
