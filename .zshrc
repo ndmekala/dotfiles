@@ -57,7 +57,7 @@ a () {
 }
 
 # Exa Aliases
-alias xa="exa --long --icons --git"
+alias ll="exa --long --icons --git"
 alias xt="exa --long --icons --git --tree --git-ignore"
 
 # Git Aliases
