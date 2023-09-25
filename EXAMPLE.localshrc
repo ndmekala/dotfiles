@@ -1,2 +1,7 @@
 # source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 # source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+#
+# alias zorg="cd /Users/nirmal/ghq/github.com/ndmekala/organizer"
+# alias zoc="cd /Users/nirmal/Documents"
+# alias zesk="cd /Users/nirmal/Desktop"
+# alias zown="cd /Users/nirmal/Downloads"
