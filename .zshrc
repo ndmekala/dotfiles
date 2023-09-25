@@ -51,9 +51,15 @@ phq () {
   cd $(ghq list --full-path | peco)
 }
 
-# App Launch
-a () {
-  open $(find /Applications -maxdepth 1 -not -path '*/\.*' | peco)
+gr () {
+  local git_dir
+  git_dir=$(git rev-parse --show-toplevel 2>/dev/null)
+  
+  if [[ -n "$git_dir" ]]; then
+    cd "$git_dir"
+  else
+    echo "Not inside a Git repository."
+  fi
 }
 
 # Exa Aliases
@@ -65,7 +71,6 @@ alias ga="git add -A"
 alias gp="git push"
 alias gs="git status"
 alias gbv="git branch -v"
-alias gr="cd $(git rev-parse --show-toplevel)"
 alias acp="auto_add_commit_push"
 alias gcb="git checkout -b"
 
