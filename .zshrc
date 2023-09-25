@@ -65,7 +65,7 @@ alias ga="git add -A"
 alias gp="git push"
 alias gs="git status"
 alias gbv="git branch -v"
-# alias gcn="ga && git commit -m '$(commit_message)' && gp"
+alias gr="cd $(git rev-parse --show-toplevel)"
 alias acp="auto_add_commit_push"
 alias gcb="git checkout -b"
 
