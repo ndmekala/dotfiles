@@ -29,6 +29,9 @@ export BAT_THEME="ansi"
 # Remove Ctrl+X from zsh keybindings so that vim can use it
 bindkey -r "^X"
 
+# Make neovim my default editor
+export EDITOR="nvim"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . ~/.z-jump/z.sh
@@ -63,8 +66,8 @@ gr () {
 }
 
 # Exa Aliases
-alias ll="exa --long --icons --git"
-alias xt="exa --long --icons --git --tree --git-ignore"
+alias ll="exa --long --icons --git --group"
+alias xt="exa --long --icons --git --group --tree --git-ignore"
 
 # Git Aliases
 alias ga="git add -A"
@@ -94,3 +97,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=/Users/nirmal/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/nirmal/bin
+
+# Created by `pipx` on 2023-09-28 02:28:16
+export PATH="$PATH:/Users/nirmal/.local/bin"
