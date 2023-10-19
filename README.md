@@ -1,6 +1,6 @@
 # Nirmal Mekala’s Dotfiles
 
-> A set of dotfiles for use with `zsh` on macOS<a href="#asterisk"><sup>*</sup></a>.
+> A set of dotfiles for use with `zsh` on macOS<sup>*</sup>.
 
 ## Usage
 
@@ -46,4 +46,4 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 - Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) and setup are the number one inspiration for this project
 - Zach Holman’s [dotfiles](https://github.com/holman/dotfiles)
 
-<small id="asterisk"><sup>*</sup>I’ve had good success adapting these dotfiles to work with `zsh` on Linux as well. Some macOS-specific logic in the `.zshrc` file precludes symlinking, but copying and tweaking worked well. Just make sure you install all the utilities the dotfiles reference.</small>
+<small><sup>*</sup>I’ve had good success adapting these dotfiles to work with `zsh` on Linux as well. Some macOS-specific logic in the `.zshrc` file precludes symlinking, but copying and tweaking worked well. Just make sure you install all the utilities the dotfiles reference.</small>
