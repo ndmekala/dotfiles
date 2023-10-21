@@ -141,6 +141,7 @@ inoremap { {}<left>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-]> :NERDTreeFocus<CR>
 let NERDTreeShowLineNumbers=1
+let NERDTreeIgnore=['\.bak$']
 autocmd FileType nerdtree setlocal nu!
 
 " COC.NVIM CONFIG (TAB AUTOCOMPLETE)
