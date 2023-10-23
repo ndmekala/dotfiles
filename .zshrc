@@ -54,6 +54,7 @@ phq () {
   cd $(ghq list --full-path | peco)
 }
 
+# Change directory to the root of the git repo
 gr () {
   local git_dir
   git_dir=$(git rev-parse --show-toplevel 2>/dev/null)
@@ -63,6 +64,22 @@ gr () {
   else
     echo "Not inside a Git repository."
   fi
+}
+
+# create a new note in the orgnizer directory
+function n() {
+    local note_dir="$ORG_DIRECTORY" # assumes ORG_DIRECTORY is set
+    local timestamp=$(date +'%y%m%d')
+    local note_number=1
+
+    # Find the highest existing note number
+    while [[ -e "$note_dir/${timestamp}-$(printf '%03d' $note_number)-note.md" ]]; do
+        ((note_number++))
+    done
+
+    local note_file="${note_dir}/${timestamp}-$(printf '%03d' $note_number)-note.md"
+    nvim "$note_file"
+    echo "Note saved as $note_file"
 }
 
 # Exa Aliases

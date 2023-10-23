@@ -5,3 +5,5 @@
 # alias zoc="cd /Users/nirmal/Documents"
 # alias zesk="cd /Users/nirmal/Desktop"
 # alias zown="cd /Users/nirmal/Downloads"
+#
+# export ORG_DIRECTORY="/home/nirmal/ghq/github.com/ndmekala/organizer"
