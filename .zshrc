@@ -23,6 +23,8 @@ source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
 
 alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
 
+alias i="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a addto inbox.txt"
+
 export BAT_THEME="ansi"
 
 
@@ -107,8 +109,8 @@ f() {
 }
 
 # gcalcli
-alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
-alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
+# alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
+# alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
