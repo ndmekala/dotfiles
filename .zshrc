@@ -120,8 +120,8 @@ mail () {
 
 
 # gcalcli
-# alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
-# alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
+alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
+alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
