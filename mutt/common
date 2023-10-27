@@ -1,0 +1,33 @@
+# KEY BINDINGS
+# ============
+
+bind pager j next-line
+bind pager k previous-line
+bind pager n next-undeleted
+bind pager p previous-undeleted
+
+
+# CHATGPT USE LYNX
+# ================
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# CHATGPT SANE COLORS
+# ===================
+
+# Basic colors
+color normal        white           black
+color error         red             black
+color hdrdefault    white           black
+color indicator     brightyellow    black
+color tree          cyan            black
+color tilde         yellow          black
+
+# Quoted text
+color quoted        brightblue      black
+
+# Signature
+color signature     brightyellow    black
+
+# Status bar
+color status        white           blue

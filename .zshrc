@@ -108,6 +108,17 @@ f() {
   cd "$(cat "$HOME/.cache/fff/.fff_d")"
 }
 
+# mail command (fire within tmux)
+mail () {
+  if [ -e "$HOME/.config/mutt/accounts"] ; then
+    for muttrc in "$HOME/.config/mutt/accounts"/muttrc* ; do
+      tmux new-window
+      tmux send-keys "mutt -F $muttrc" C-m
+    done
+  fi
+}
+
+
 # gcalcli
 # alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 # alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
