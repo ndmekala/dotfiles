@@ -110,7 +110,7 @@ f() {
 
 # mail command (fire within tmux)
 mail () {
-  if [ -e "$HOME/.config/mutt/accounts"] ; then
+  if [ -e "$HOME/.config/mutt/accounts" ] ; then
     for muttrc in "$HOME/.config/mutt/accounts"/muttrc* ; do
       tmux new-window
       tmux send-keys "mutt -F $muttrc" C-m
