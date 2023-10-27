@@ -44,6 +44,7 @@ done
 SYMLINK_DATA=(
 "$DOTFILES_ROOT/karabiner" "$DESTINATION_DIR/.config/karabiner"
 "$DOTFILES_ROOT/nvim" "$DESTINATION_DIR/.config/nvim"
+"$DOTFILES_ROOT/mutt" "$DESTINATION_DIR/.config/mutt"
 )
 TOTAL_SPECIAL_CASES=$(( ${#SYMLINK_DATA[@]} / 2 - 1 ))
 
