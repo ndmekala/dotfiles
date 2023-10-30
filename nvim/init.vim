@@ -144,6 +144,13 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeIgnore=['\.bak$']
 autocmd FileType nerdtree setlocal nu!
 
+" CODEIUM CONFIG
+" ==============
+let g:codeium_filetypes = {
+      \ "markdown": v:false,
+      \ }
+
+
 " COC.NVIM CONFIG (TAB AUTOCOMPLETE)
 " ==================================
 " Use tab for trigger completion with characters ahead and navigate.
