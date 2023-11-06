@@ -5,25 +5,29 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-case $(uname -m) in
-  'arm64')
-    homebrew_path='/opt/homebrew'
-    ;;
-  'x86_64')
-    homebrew_path='/usr/local'
-    ;;
-  *)
-    echo 'An error occurred parsing system architecture'
-    ;;
-esac
+# case $(uname -m) in
+#   'arm64')
+#     homebrew_path='/opt/homebrew'
+#     ;;
+#   'x86_64')
+#     homebrew_path='/usr/local'
+#     ;;
+#   *)
+#     echo 'An error occurred parsing system architecture'
+#     ;;
+# esac
 
+# LOCAL
+source ~/.localshrc
 
+# source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
+source "$POWERLEVEL_THEME_LOCATION"
 
-source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
+# alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
+alias t="$TODO_SH_LOCATION/todo.sh -t -a"
 
-alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
-
-alias i="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a addto inbox.txt"
+# alias i="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a addto inbox.txt"
+alias i="$TODO_SH_LOCATION/todo.sh -t -a addto inbox.txt"
 
 export BAT_THEME="ansi"
 
@@ -99,8 +103,7 @@ alias gcb="git checkout -b"
 # Auto Completion
 autoload -Uz compinit && compinit
 
-# LOCAL
-source ~/.localshrc
+
 
 # fff
 f() {
@@ -123,10 +126,4 @@ mail () {
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=/Users/nirmal/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/nirmal/bin
 
-# Created by `pipx` on 2023-09-28 02:28:16
-export PATH="$PATH:/Users/nirmal/.local/bin"
