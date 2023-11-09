@@ -121,6 +121,10 @@ mail () {
   fi
 }
 
+o () {
+  open $(ls -d $PWD/* | peco)
+}
+
 
 # gcalcli
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
