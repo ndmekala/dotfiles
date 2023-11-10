@@ -24,10 +24,10 @@ source ~/.localshrc
 source "$POWERLEVEL_THEME_LOCATION"
 
 # alias t="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a"
-alias t="$TODO_SH_LOCATION/todo.sh -t -a"
+alias t="$TODO_SH_LOCATION -t -a"
 
 # alias i="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a addto inbox.txt"
-alias i="$TODO_SH_LOCATION/todo.sh -t -a addto inbox.txt"
+alias i="$TODO_SH_LOCATION -t -a addto inbox.txt"
 
 export BAT_THEME="ansi"
 
