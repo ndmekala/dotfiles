@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get full directory name of this script
 DOTFILES_ROOT="$HOME/.dotfiles"
