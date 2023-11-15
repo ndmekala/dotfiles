@@ -88,9 +88,23 @@ function n() {
     echo "Note saved as $note_file"
 }
 
-# Exa Aliases
-alias ll="exa --long --icons --git --group"
-alias xt="exa --long --icons --git --group --tree --git-ignore"
+# Exa Functions
+
+ll () {
+  if command -v exa > /dev/null 2>&1 ; then
+    exa --long --icons --git --group
+  else
+    ls -l
+  fi
+}
+
+xt () {
+  if command -v exa > /dev/null 2>&1 ; then
+    exa --long --icons --git --group --tree --git-ignore
+  else
+    echo "Exa is not installed!"
+  fi
+}
 
 # Git Aliases
 alias ga="git add -A"
