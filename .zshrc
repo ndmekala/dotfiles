@@ -5,18 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# case $(uname -m) in
-#   'arm64')
-#     homebrew_path='/opt/homebrew'
-#     ;;
-#   'x86_64')
-#     homebrew_path='/usr/local'
-#     ;;
-#   *)
-#     echo 'An error occurred parsing system architecture'
-#     ;;
-# esac
-
 # LOCAL
 source ~/.localshrc
 
@@ -57,6 +45,7 @@ auto_add_commit_push () {
 
 # Select GHQ Location with Peco
 phq () {
+  # TODO add failsafe
   cd $(ghq list --full-path | peco)
 }
 
@@ -91,6 +80,7 @@ function n() {
 # Exa Functions
 
 ll () {
+  # TODO allow flags
   if command -v exa > /dev/null 2>&1 ; then
     exa --long --icons --git --group
   else
@@ -99,6 +89,7 @@ ll () {
 }
 
 xt () {
+  # TODO allow flags
   if command -v exa > /dev/null 2>&1 ; then
     exa --long --icons --git --group --tree --git-ignore
   else
@@ -117,8 +108,6 @@ alias gcb="git checkout -b"
 # Auto Completion
 autoload -Uz compinit && compinit
 
-
-
 # fff
 f() {
   fff "$@"
@@ -127,6 +116,7 @@ f() {
 
 # mail command (fire within tmux)
 mail () {
+  # TODO add failsafe
   if [ -e "$HOME/.config/mutt/accounts" ] ; then
     for muttrc in "$HOME/.config/mutt/accounts"/muttrc* ; do
       tmux new-window
@@ -136,11 +126,13 @@ mail () {
 }
 
 o () {
+  # TODO add failsafe
   open $(ls -d $PWD/* | peco)
 }
 
 
 # gcalcli
+# TODO add failsafes
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
