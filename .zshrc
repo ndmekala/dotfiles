@@ -124,7 +124,7 @@ f() {
 
 # mail command (fire within tmux)
 mail () {
-  # TODO add failsafe
+  check_command mutt || return 1
   if [ -e "$HOME/.config/mutt/accounts" ] ; then
     for muttrc in "$HOME/.config/mutt/accounts"/muttrc* ; do
       tmux new-window
