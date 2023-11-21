@@ -80,18 +80,16 @@ function n() {
 # Exa Functions
 
 ll () {
-  # TODO allow flags
   if command -v exa > /dev/null 2>&1 ; then
-    exa --long --icons --git --group
+    exa --long --icons --git --group "$@"
   else
-    ls -l
+    ls -l "$@"
   fi
 }
 
 xt () {
-  # TODO allow flags
   if command -v exa > /dev/null 2>&1 ; then
-    exa --long --icons --git --group --tree --git-ignore
+    exa --long --icons --git --group --tree --git-ignore "$@"
   else
     echo "Exa is not installed!"
   fi
