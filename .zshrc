@@ -125,12 +125,6 @@ mail () {
   fi
 }
 
-o () {
-  # TODO add failsafe
-  open $(ls -d $PWD/* | peco)
-}
-
-
 # gcalcli
 # TODO add failsafes
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
