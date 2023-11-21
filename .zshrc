@@ -43,9 +43,19 @@ auto_add_commit_push () {
 
 }
 
+# Check if command is installed
+check_command() {
+  local command_to_check="$1"
+  if ! command -v "$command_to_check" > /dev/null 2>&1; then
+    echo "Error: $command_to_check is not installed. Exiting."
+    exit 1
+  fi
+}
+
 # Select GHQ Location with Peco
 phq () {
-  # TODO add failsafe
+  check_command ghq
+  check_command peco
   cd $(ghq list --full-path | peco)
 }
 
