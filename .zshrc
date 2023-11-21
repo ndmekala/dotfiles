@@ -48,14 +48,14 @@ check_command() {
   local command_to_check="$1"
   if ! command -v "$command_to_check" > /dev/null 2>&1; then
     echo "Error: $command_to_check is not installed. Exiting."
-    exit 1
+    return 1
   fi
 }
 
 # Select GHQ Location with Peco
 phq () {
-  check_command ghq
-  check_command peco
+  check_command ghq || return 1
+  check_command peco || return 1
   cd $(ghq list --full-path | peco)
 }
 
