@@ -1,0 +1,54 @@
+!font
+XTerm*faceSize: 14
+XTerm*faceName: FiraCode Nerd Font Mono
+XTerm*eightBitInput: false
+XTerm*allowBoldFonts: false
+
+!scroll bars
+XTerm*scrollBar: off
+
+!paste
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+
+!background
+XTerm*background: #222222
+XTerm*foreground: #d2d2d2
+
+!border
+XTerm*borderWidth: 3
+XTerm*borderColor: #af005f
+
+
+!black
+XTerm*color0: #1c1c1c
+XTerm*color8: #585858
+
+!red
+XTerm*color1: #ff5faf
+XTerm*color9: #ff5faf
+
+!green
+XTerm*color2: #5faf5f
+XTerm*color10: #5faf5f
+
+!yellow
+XTerm*color3: #d7875f
+XTerm*color11: #d7875f
+
+!blue
+XTerm*color4: #5fafd7
+XTerm*color12: #5fafd7
+
+!magenta
+XTerm*color5: #af87d7
+XTerm*color13: #af87d7
+
+!cyan
+XTerm*color6: #00afaf
+XTerm*color14: #00afaf
+
+!white
+XTerm*color7: #d0d0d0
+XTerm*color15: #feffff
