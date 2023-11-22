@@ -4,6 +4,9 @@ XTerm*faceName: FiraCode Nerd Font Mono
 XTerm*eightBitInput: false
 XTerm*allowBoldFonts: false
 
+!scroll bars
+XTerm*scrollBar: off
+
 !paste
 XTerm*vt100.translations: #override \
     Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
