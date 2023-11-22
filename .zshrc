@@ -118,6 +118,7 @@ autoload -Uz compinit && compinit
 
 # fff
 f() {
+  check_command fff || return 1
   fff "$@"
   cd "$(cat "$HOME/.cache/fff/.fff_d")"
 }
@@ -134,7 +135,6 @@ mail () {
 }
 
 # gcalcli
-# TODO add failsafes
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
