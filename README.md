@@ -1,6 +1,6 @@
 # Nirmal Mekala’s Dotfiles
 
-> A set of dotfiles for use with `zsh` on macOS<sup>*</sup>.
+> A set of dotfiles for use with `zsh`.
 
 ## Usage
 
@@ -35,6 +35,11 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 - sample config file for `todo-txt` CLI
 - `z` for fast directory jumping
 - a minimalist `tmux` configuration
+- colorschemes for iTerm on macOS
+- config and colorschemes for `xterm` on other systems
+- a simple `i3` configuration
+
+I’ve used these dots on macOS, Linux (Ubuntu), OpenBSD, and WSL. The script will (harmlessly) set up _all_ the config files, not just those intended for the particular OS.
 
 ## See Also
 
@@ -45,5 +50,3 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 
 - Takuya Matsuyama’s [dotfiles](https://github.com/craftzdog/dotfiles-public) and setup are the number one inspiration for this project
 - Zach Holman’s [dotfiles](https://github.com/holman/dotfiles)
-
-<small><sup>*</sup> I’ve had good success adapting these dotfiles to work with `zsh` on Linux as well. Some macOS-specific logic in the `.zshrc` file precludes symlinking, but copying and tweaking worked well. Just make sure you install all the utilities the dotfiles reference.</small>
