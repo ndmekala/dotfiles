@@ -1,1 +1,1 @@
-[[ -f ~/.Xresources ]] xrdb -load ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
