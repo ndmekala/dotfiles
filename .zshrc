@@ -26,6 +26,9 @@ bindkey -r "^X"
 # Make neovim my default editor
 export EDITOR="nvim"
 
+# vi = nvim!
+alias vi="nvim"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . ~/.z-jump/z.sh
