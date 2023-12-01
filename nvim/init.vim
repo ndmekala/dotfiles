@@ -135,10 +135,11 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 
-" macOS-like CURLY QUOTES
-" ============
+" TYPOGRAPHY
+" ==========
 inoremap <C-\> “”<left>
 inoremap <C-]> ‘’<left>
+inoremap ... …
 
 " NERDTREE CONFIG
 " ===============
