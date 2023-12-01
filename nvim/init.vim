@@ -41,7 +41,6 @@ syntax on
 " ==================
 runtime ./todo/txt.vim
 
-
 " TELESCOPE SETUP
 " ===============
 
@@ -135,6 +134,11 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+
+" macOS-like CURLY QUOTES
+" ============
+inoremap <C-\> “”<left>
+inoremap <C-]> ‘’<left>
 
 " NERDTREE CONFIG
 " ===============
