@@ -141,4 +141,6 @@ mail () {
 alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
 alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
+# qlmanage
 
+alias ql="qlmanage -p"
