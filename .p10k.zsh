@@ -49,10 +49,10 @@
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     goenv                   # go environment (https://github.com/syndbg/goenv)
-    nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
-    nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
-    nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-    # node_version          # node.js version
+    # nodenv                # node.js version from nodenv (https://github.com/nodenv/nodenv)
+    # nvm                   # node.js version from nvm (https://github.com/nvm-sh/nvm)
+    # nodeenv               # node.js environment (https://github.com/ekalinin/nodeenv)
+    node_version            # node.js version
     # go_version            # go version (https://golang.org)
     # rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
@@ -971,7 +971,7 @@
   # Nodeenv color.
   typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=2
   # Don't show Node version next to the environment name.
-  typeset -g POWERLEVEL9K_NODEENV_SHOW_NODE_VERSION=false
+  typeset -g POWERLEVEL9K_NODEENV_SHOW_NODE_VERSION=true
   # Separate environment name from Node version only with a space.
   typeset -g POWERLEVEL9K_NODEENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
