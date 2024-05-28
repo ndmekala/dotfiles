@@ -144,3 +144,13 @@ alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays ca
 # qlmanage
 
 alias ql="qlmanage -p"
+
+grab () {
+  check_command pbcopy || return 1
+  pwd | pbcopy
+}
+
+drop () {
+  check_command pbpaste || return 1
+  cd $(pbpaste)
+}
