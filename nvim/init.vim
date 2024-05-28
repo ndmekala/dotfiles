@@ -153,6 +153,7 @@ autocmd FileType nerdtree setlocal nu!
 " ==============
 let g:codeium_filetypes = {
       \ "markdown": v:false,
+      \ "csv": v:false,
       \ }
 
 
