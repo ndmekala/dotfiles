@@ -104,7 +104,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -188,6 +188,7 @@ exec_always --no-startup-id xsetroot -solid "#5f8787"
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 bindsym $mod+r mode "resize"
+bindsym $mod+space exec "rofi -show combi"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
