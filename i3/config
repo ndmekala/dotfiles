@@ -189,6 +189,8 @@ exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 bindsym $mod+r mode "resize"
 bindsym $mod+space exec "rofi -show combi"
+bindsym $mod+Shift+Return exec firefox
+
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
