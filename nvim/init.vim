@@ -2,7 +2,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/vim/plugged')
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'preservim/vim-pencil'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty/'
@@ -143,11 +143,11 @@ inoremap ... …
 
 " NERDTREE CONFIG
 " ===============
-nnoremap <C-\> :NERDTreeToggle<CR>
-nnoremap <C-]> :NERDTreeFocus<CR>
-let NERDTreeShowLineNumbers=1
-let NERDTreeIgnore=['\.bak$']
-autocmd FileType nerdtree setlocal nu!
+" nnoremap <C-\> :NERDTreeToggle<CR>
+" nnoremap <C-]> :NERDTreeFocus<CR>
+" let NERDTreeShowLineNumbers=1
+" let NERDTreeIgnore=['\.bak$']
+" autocmd FileType nerdtree setlocal nu!
 
 " CODEIUM CONFIG
 " ==============
