@@ -25,7 +25,7 @@ call plug#end()
 
 " VIM CONFIG
 " ==========
-let mapleader = ","
+let mapleader = " "
 nnoremap <SPACE> <Nop>
 let maplocalleader = '\'
 set relativenumber
