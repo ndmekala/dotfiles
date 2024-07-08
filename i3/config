@@ -204,4 +204,12 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bar {
     position top
     status_command i3status
+    colors {
+        background #222222
+        statusline #ffffff
+        focused_workspace  #af87d7 #af87d7 #222222
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
 }
