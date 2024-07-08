@@ -19,7 +19,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
-Plug 'dylanaraps/fff.vim'
+" Plug 'dylanaraps/fff.vim'
 
 call plug#end()
 
