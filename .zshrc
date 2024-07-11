@@ -50,11 +50,11 @@ check_command() {
 }
 
 # Select GHQ Location with Peco
-phq () {
-  check_command ghq || return 1
-  check_command peco || return 1
-  cd $(ghq list --full-path | peco)
-}
+# phq () {
+#   check_command ghq || return 1
+#   check_command peco || return 1
+#   cd $(ghq list --full-path | peco)
+# }
 
 # Select ghq location with fzf
 fhq () {
