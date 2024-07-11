@@ -17,17 +17,11 @@ alias t="$TODO_SH_LOCATION -t -a"
 # alias i="$homebrew_path/opt/todo-txt/bin/todo.sh -t -a addto inbox.txt"
 alias i="$TODO_SH_LOCATION -t -a addto inbox.txt"
 
-export BAT_THEME="ansi"
-
-
 # Remove Ctrl+X from zsh keybindings so that vim can use it
 bindkey -r "^X"
 
 # Make neovim my default editor
 export EDITOR="nvim"
-
-# vi = nvim!
-alias vi="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -60,6 +54,13 @@ phq () {
   check_command ghq || return 1
   check_command peco || return 1
   cd $(ghq list --full-path | peco)
+}
+
+# Select ghq location with fzf
+fhq () {
+  check_command ghq || return 1
+  check_command fzf || return 1
+  cd $(ghq list --full-path | fzf)
 }
 
 # Change directory to the root of the git repo
@@ -125,21 +126,6 @@ f() {
   fff "$@"
   cd "$(cat "$HOME/.cache/fff/.fff_d")"
 }
-
-# mail command (fire within tmux)
-mail () {
-  check_command mutt || return 1
-  if [ -e "$HOME/.config/mutt/accounts" ] ; then
-    for muttrc in "$HOME/.config/mutt/accounts"/muttrc* ; do
-      tmux new-window
-      tmux send-keys "mutt -F $muttrc" C-m
-    done
-  fi
-}
-
-# gcalcli
-alias gcalw="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calw"
-alias gcalm="gcalcli --calendar nirmal.d.mekala@gmail.com --calendar holidays calm"
 
 # qlmanage
 
