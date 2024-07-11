@@ -23,6 +23,9 @@ bindkey -r "^X"
 # Make neovim my default editor
 export EDITOR="nvim"
 
+# fzf
+source <(fzf --zsh)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . ~/.z-jump/z.sh
