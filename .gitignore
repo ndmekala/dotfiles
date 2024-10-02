@@ -1,3 +1,4 @@
 *.DS_Store
 muttrc*
 *.gpg
+i3/config.local
