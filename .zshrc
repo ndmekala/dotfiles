@@ -34,7 +34,7 @@ source <(fzf --zsh)
 auto_add_commit_push () {
   current_dir="$PWD"
 
-  if [[ "$current_dir" == *"organize"* || "$current_dir" == *"cw-notes"* ]]; then
+  if [[ "$current_dir" == *"organize"* || "$current_dir" == *"cw-notes"* || "$current_dir" == *"pensieve"* ]]; then
     date_and_time=$(date '+%Y-%m-%d %H:%M:%S')
     git add -A && git commit -m "pushed via script $date_and_time" && git push
   else
