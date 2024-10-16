@@ -1,0 +1,11 @@
+# qlmanage
+alias ql="qlmanage -p"
+# Git Aliases
+alias ga="git add -A"
+alias gp="git push"
+alias gs="git status"
+alias gbv="git branch -v"
+alias acp="auto_add_commit_push"
+alias gcb="git checkout -b"
+alias t="$TODO_SH_LOCATION -t -a"
+alias i="$TODO_SH_LOCATION -t -a addto inbox.txt"
