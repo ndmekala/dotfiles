@@ -39,7 +39,7 @@ It also installs [`vim-plug` for Neovim](https://github.com/junegunn/vim-plug#ne
 - config and colorschemes for `xterm` on other systems
 - a simple `i3` configuration
 
-I’ve used these dots on macOS, Linux (Ubuntu), OpenBSD, and WSL. The script will (harmlessly) set up _all_ the config files, not just those intended for the particular OS.
+I’ve used these dots as a base on macOS, Linux, OpenBSD, and WSL. The script will (harmlessly) set up _all_ the config files, not just those intended for the particular OS.
 
 ## See Also
 
