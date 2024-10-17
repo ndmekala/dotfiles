@@ -1,5 +1,5 @@
 !font
-XTerm*faceSize: 14
+XTerm*faceSize: 13
 XTerm*faceName: FiraCode Nerd Font Mono
 XTerm*eightBitInput: false
 XTerm*allowBoldFonts: false
