@@ -20,9 +20,12 @@ check_command() {
 
 # Select ghq location with fzf
 fhq () {
-  check_command ghq || return 1
   check_command fzf || return 1
-  cd $(ghq list --full-path | fzf)
+  if check_command ghq; then
+    cd $(ghq list --full-path | fzf)
+  else
+    cd $(find ~/ghq -type d -maxdepth 3 -mindepth 3 | fzf)
+  fi
 }
 
 
