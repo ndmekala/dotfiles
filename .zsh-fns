@@ -24,7 +24,7 @@ fhq () {
   if whence -p ghq > /dev/null 2>&1; then
     cd $(ghq list --full-path | fzf)
   else
-    cd $(find ~/ghq -type d -maxdepth 3 -mindepth 3 | fzf)
+    cd $(find ~/ghq -maxdepth 3 -mindepth 3 -type d  | fzf)
   fi
 }
 
