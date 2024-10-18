@@ -57,14 +57,18 @@ function n() {
 
 # Exa Functions
 ll () {
-  if command -v exa > /dev/null 2>&1 ; then
+  if command -v eza > /dev/null 2>&1 ; then
+    eza --long --icons --git --group "$@"
+  elif command -v exa > /dev/null 2>&1 ; then
     exa --long --icons --git --group "$@"
   else
     ls -l "$@"
   fi
 }
 xt () {
-  if command -v exa > /dev/null 2>&1 ; then
+  if command -v eza > /dev/null 2>&1 ; then
+    eza --long --icons --git --group --tree --git-ignore "$@"
+  elif command -v exa > /dev/null 2>&1 ; then
     exa --long --icons --git --group --tree --git-ignore "$@"
   else
     echo "Exa is not installed!"
