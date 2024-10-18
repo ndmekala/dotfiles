@@ -21,7 +21,7 @@ check_command() {
 # Select ghq location with fzf
 fhq () {
   check_command fzf || return 1
-  if check_command ghq; then
+  if whence -p ghq > /dev/null 2>&1; then
     cd $(ghq list --full-path | fzf)
   else
     cd $(find ~/ghq -type d -maxdepth 3 -mindepth 3 | fzf)
@@ -80,6 +80,57 @@ f() {
   check_command fff || return 1
   fff "$@"
   cd "$(cat "$HOME/.cache/fff/.fff_d")"
+}
+
+### ghq
+ghq() {
+  if whence -p ghq > /dev/null 2>&1 ; then
+    ghq "$@"
+  else
+    ghqShellVersion "$@"
+  fi
+}
+
+ghqShellVersion() {
+  # Function to display usage instructions
+  usage() {
+      echo "Usage: ghq get <repository_url>"
+      echo "       ghq list"
+  }
+
+  get_repo() {
+    repo_url=$1
+    if [[ $repo_url == *@* ]]; then
+        # SSH format (with or without .git)
+        domain=$(echo "$repo_url" | awk -F'[@:/]' '{print $2}')
+        user=$(echo "$repo_url" | awk -F'[@:/]' '{print $3}')
+        repo=$(echo "$repo_url" | awk -F'[@:/]' '{print $4}' | sed 's/\.git$//')
+    else
+        # HTTPS format (with or without .git)
+        domain=$(echo "$repo_url" | awk -F/ '{print $(NF-2)}')
+        user=$(echo "$repo_url" | awk -F/ '{print $(NF-1)}')
+        repo=$(echo "$repo_url" | awk -F/ '{print $(NF)}' | sed 's/\.git$//')
+    fi
+    if [[ -n "$domain" && -n "$user" && -n "$repo" ]]; then
+      target_dir="$HOME/ghq/$domain/$user/$repo"
+      mkdir -p "$target_dir"
+      git clone $repo_url $target_dir
+    else
+      echo "Error: Invalid repository URL format."
+      usage
+      return 1
+    fi
+  }
+
+  # Check if the first argument is 'get'
+  if [[ $1 == "get" && $# -eq 2 ]]; then
+      get_repo $2
+  elif [[ $1 == "list" ]]; then
+      find $HOME/ghq -type d -maxdepth 3 -mindepth 3
+  else
+      usage
+      return 1
+  fi
 }
 
 # qlmanage
