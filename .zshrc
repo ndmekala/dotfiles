@@ -5,26 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# LOCAL
-source ~/.localshrc
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -f ~/.z-jump/z.sh ]] && . ~/.z-jump/z.sh
+[[ -f ~/.zsh-fns ]] && source ~/.zsh-fns
+[[ -f ~/.zsh-aliases ]] && source ~/.zsh-aliases
+[[ -f ~/.localshrc ]] && source ~/.localshrc
+[[ -f "$POWERLEVEL_THEME_LOCATION" ]] && source "$POWERLEVEL_THEME_LOCATION"
+check_command fzf && source <(fzf --zsh) # check command in zsh fns
 
-# source "$homebrew_path/opt/powerlevel10k/powerlevel10k.zsh-theme"
-source "$POWERLEVEL_THEME_LOCATION"
-
-# Remove Ctrl+X from zsh keybindings so that vim can use it
-bindkey -r "^X"
-
-# Make neovim my default editor
-export EDITOR="nvim"
-
-# fzf
-source <(fzf --zsh)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[[ ! -f ~/.z-jump/z.sh ]] || . ~/.z-jump/z.sh
-[[ ! -f ~/.zsh-fns ]] || source ~/.zsh-fns
-[[ ! -f ~/.zsh-aliases ]] || source ~/.zsh-aliases
-
-# Auto Completion
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit # autocomplete
+bindkey -r "^X" # give vim ctrl x
+export EDITOR="nvim" # neovim default editor
