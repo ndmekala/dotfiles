@@ -126,7 +126,7 @@ ghqShellVersion() {
   if [[ $1 == "get" && $# -eq 2 ]]; then
       get_repo $2
   elif [[ $1 == "list" ]]; then
-      find $HOME/ghq -type d -maxdepth 3 -mindepth 3
+      find $HOME/ghq -maxdepth 3 -mindepth 3 -type d 
   else
       usage
       return 1
