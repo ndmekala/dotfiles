@@ -85,7 +85,7 @@ f() {
 ### ghq
 ghq() {
   if whence -p ghq > /dev/null 2>&1 ; then
-    ghq "$@"
+    command ghq "$@"
   else
     ghqShellVersion "$@"
   fi
