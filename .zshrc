@@ -11,7 +11,10 @@ fi
 [[ -f ~/.zsh-aliases ]] && source ~/.zsh-aliases
 [[ -f ~/.localshrc ]] && source ~/.localshrc
 [[ -f "$POWERLEVEL_THEME_LOCATION" ]] && source "$POWERLEVEL_THEME_LOCATION"
-check_command fzf && source <(fzf --zsh) # check command in zsh fns
+
+# check_command comes from zsh-fns
+# fzf zsh completion requries version >= 0.48.0
+check_command fzf && [[ $(printf '%s\n' $(fzf --version | awk '{print $1}') "0.48.0" | sort -V | head -n1)  == "0.48.0" ]] && source <(fzf --zsh)
 
 autoload -Uz compinit && compinit # autocomplete
 bindkey -r "^X" # give vim ctrl x
