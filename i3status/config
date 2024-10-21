@@ -31,7 +31,7 @@ order += "tztime local"
 # }
 
 battery all {
-        format = " %percentage"
+        format = "%percentage"
 }
 
 # disk "/" {
