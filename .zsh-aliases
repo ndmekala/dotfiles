@@ -6,7 +6,7 @@ alias sz="source ~/.zshrc"
 alias ga="git add -A"
 alias gp="git push"
 alias gs="git status"
-alias gbv="git branch -v"
+alias gb="git branch"
 alias acp="auto_add_commit_push"
 alias gcb="git checkout -b"
 
