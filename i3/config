@@ -179,7 +179,7 @@ include ./config.local
 
 # bindsym $mod+r mode "resize"
 bindsym $mod+space exec "rofi -show combi"
-bindsym $mod+Shift+Return exec firefox
+# bindsym $mod+Shift+Return exec firefox
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #af87d7 #af87d7 #1c1c1c #2e9ef4   #285577
