@@ -142,7 +142,7 @@ inoremap { {}<left>
 " TYPOGRAPHY
 " ==========
 inoremap <C-\> “”<left>
-inoremap <C-]> ‘’<left>
+inoremap <C-]> ’
 inoremap ... …
 
 " NERDTREE CONFIG
