@@ -166,5 +166,5 @@ bwutil () {
   fi
   echo "Password copied"
 
-  rm $bw_items $bw_name_id
+  rm $bw_items $bw_name_id $bw_id
 }
