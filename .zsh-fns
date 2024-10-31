@@ -145,6 +145,10 @@ drop () {
 
 # BW password
 bwutil () {
+  check_command bw || return 1
+  check_command fzf || return 1
+  check_command fx || return 1
+
   bw_items=$(mktemp)
   bw_name_id=$(mktemp)
   bw_id=$(mktemp)
@@ -162,5 +166,5 @@ bwutil () {
   fi
   echo "Password copied"
 
-  rm $bw_items $bw_name_id
+  rm $bw_items $bw_name_id $bw_id
 }
