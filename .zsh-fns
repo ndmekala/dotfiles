@@ -168,3 +168,34 @@ bwutil () {
 
   rm $bw_items $bw_name_id $bw_id
 }
+
+# timers
+
+function os_sound() {
+  say -v Moira "Time is up!"
+}
+
+function ts() {
+  end_time=$(( $(date +%s) + $1 ))
+  while [ "$(date +%s)" -lt "$end_time" ]; do
+    remaining=$(( end_time - $(date +%s) ))
+    hours=$(( remaining / 3600 ))
+    minutes=$(( (remaining % 3600) / 60 ))
+    seconds=$(( remaining % 60 ))
+    printf "\r%02d:%02d:%02d" $hours $minutes $seconds
+    printf "\r"
+    sleep 1
+  done
+  echo ""
+  os_sound
+}
+
+function tm() {
+  echo "Timer set for $1 minutes"
+  ts $(( $1 * 60 ))
+}
+
+function th() {
+  echo "Timer set for $1 hours"
+  ts $(( $1 * 60 * 60 ))
+}
