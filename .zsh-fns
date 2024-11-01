@@ -182,20 +182,35 @@ function ts() {
     hours=$(( remaining / 3600 ))
     minutes=$(( (remaining % 3600) / 60 ))
     seconds=$(( remaining % 60 ))
-    printf "\r%02d:%02d:%02d" $hours $minutes $seconds
-    printf "\r"
+
+    # Clear the previous line for the timer to update in place
+    printf "\033c"
+
+    # Boxed timer display
+    printf "$2"
+    printf "\n"
+    printf "┌──────────────┐\n"
+    printf "│              │\n"
+    printf "│   %02d:%02d:%02d   │\n" $hours $minutes $seconds
+    printf "│              │\n"
+    printf "└──────────────┘\n"
+    printf ""
+
     sleep 1
+
+
+#    printf "\r%02d:%02d:%02d" $hours $minutes $seconds
+#    printf "\r"
+#    sleep 1
   done
   echo ""
   os_sound
 }
 
 function tm() {
-  echo "Timer set for $1 minutes"
-  ts $(( $1 * 60 ))
+  ts $(( $1 * 60 )) "Timer set for $1 minutes"
 }
 
 function th() {
-  echo "Timer set for $1 hours"
-  ts $(( $1 * 60 * 60 ))
+  ts $(( $1 * 60 * 60 )) "Timer set for $1 hours"
 }
