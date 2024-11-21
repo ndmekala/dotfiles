@@ -171,14 +171,20 @@ bwutil () {
 
 # timers
 
-function os_sound() {
-  say -v Moira "Time is up!"
+function play() {
+  ffplay -nodisp -autoexit $1 > /dev/null 2>&1
 }
 
 function ts() {
+  check_command ffplay || return 1
+  [ -e "$HOME/.timer/start.m4a" ] || { echo "Error: ~/.timer/start.m4a does not exist!" >&2; return 1; }
+  [ -e "$HOME/.timer/end.m4a" ] || { echo "Error: ~/.timer/end.m4a does not exist!" >&2; return 1; }
+
+  play "$HOME/.timer/start.m4a"
+
   end_time=$(( $(date +%s) + $1 ))
   while [ "$(date +%s)" -lt "$end_time" ]; do
-    remaining=$(( end_time - $(date +%s) ))
+    remaining=$(( end_time - $(date +%s) - 1 ))
     hours=$(( remaining / 3600 ))
     minutes=$(( (remaining % 3600) / 60 ))
     seconds=$(( remaining % 60 ))
@@ -199,12 +205,9 @@ function ts() {
     sleep 1
 
 
-#    printf "\r%02d:%02d:%02d" $hours $minutes $seconds
-#    printf "\r"
-#    sleep 1
   done
   echo ""
-  os_sound
+  play "$HOME/.timer/end.m4a"
 }
 
 function tm() {
