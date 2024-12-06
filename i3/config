@@ -206,3 +206,10 @@ bar {
 }
 
 
+# Sample config.local from macbook air 5,1 ubuntu
+# 
+# bindsym $mod+Shift+o exec --no-startup-id bash -c 'xrandr --output eDP-1 --primary --auto --output DP-1 --off'
+# bindsym $mod+Shift+p exec --no-startup-id bash -c 'xrandr --output DP-1 --primary --auto --output eDP-1 --off'
+# 
+# bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 10
+# bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 10
