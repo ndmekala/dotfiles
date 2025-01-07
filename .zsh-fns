@@ -172,7 +172,7 @@ bwutil () {
 # timers
 
 function play() {
-  ffplay -nodisp -autoexit $1 > /dev/null 2>&1
+  ffplay -nodisp -autoexit -af "volume=0.7" $1 > /dev/null 2>&1
 }
 
 function ts() {
