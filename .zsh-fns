@@ -221,3 +221,7 @@ function th() {
 function rmnl() {
   awk '{printf "%s", $0}'
 }
+
+function wordcount_diff() {
+  git diff --unified=0 | grep '^+[^+]' | sed 's/^+//' | wc -w
+}
