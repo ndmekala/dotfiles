@@ -21,6 +21,9 @@ fi
 check_command fzf && [[ $(printf '%s\n' $(fzf --version | awk '{print $1}') "0.48.0" | sort -V | head -n1)  == "0.48.0" ]] && source <(fzf --zsh)
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
 autoload -Uz compinit
 if [[ -n ${HOME}/.zcompdump(#qN.mh+24) ]]; then
   compinit
