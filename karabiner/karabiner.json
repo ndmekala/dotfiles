@@ -121,6 +121,21 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/System/Applications/Stickies.app" } } }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "kb_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "t",
                                     "modifiers": { "optional": ["any"] }
                                 },
